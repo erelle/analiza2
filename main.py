@@ -35,10 +35,10 @@ def yahakobi(matrix,solution):
     print("TAHAKOBI: ")
     dom = dominant(matrix)
     if dom > 0:
-        print("non dominant matrix ")
+        print("your matrix is a non dominant matrix ")
         return
     else:
-        print("dominant matrix ")
+        print("your matrix is a dominant matrix ")
         e=0.001
         x=0
         y=0
@@ -56,6 +56,8 @@ def yahakobi(matrix,solution):
             z=(solution[2]-matrix[i][0]*x0-matrix[i][1]*y0)/matrix[i][2]
             print("x: ", x, ",y: ", y, ",z: ",z)
             dif=abs(x-x0)
+        print("x-x0= ",dif)
+
 
 
 
@@ -84,6 +86,7 @@ def zaidel(matrix, solution):
             z = (solution[2] - matrix[i][0] * x - matrix[i][1] * y) / matrix[i][2]
             print("x: ", x, ",y: ", y, ",z: ", z)
             dif = abs(x - x0)
+        print("x-x0= ",dif)
 
 choice=int(input("which one do you want to use first: 1 yahakobi, 2 zaidel "))
 if choice==1:
