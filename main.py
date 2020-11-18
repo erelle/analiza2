@@ -35,40 +35,7 @@ def EmptyMatrix(matrix):
     return m
 
 
-def findLUD(matrix):
-    x0 = 0
-    L = EmptyMatrix(matrix)
-    for i in range(len(matrix)):
-        for j in range(len(matrix)):
-            int(i)
-            int(j)
-            if j >= i:
-                L[i][j] = 0
-            else:
-                L[i][j] = int(matrix[i][j])
-    print("L :", L)
-    U = EmptyMatrix(matrix)
-    for i in range(len(matrix)):
-        for j in range(len(matrix)):
-            int(i)
-            int(j)
-            if j <= i:
-                U[i][j] = 0
-            else:
-                U[i][j] = int(matrix[i][j])
-    print("U :", U)
-    D = EmptyMatrix(matrix)
-    for i in range(len(matrix)):
-        for j in range(len(matrix)):
-            int(i)
-            int(j)
-            if j == i:
-                D[i][j] = int(matrix[i][j])
-            else:
-                D[i][j] = 0
 
-    print("D :", D)
-    return L,U,D
 
 
 def yahakobi(matrix,solution):
@@ -78,15 +45,28 @@ def yahakobi(matrix,solution):
         return
     else:
         print("dominant matrix ")
+        e=0.001
+        x=0
+        y=0
+        z=0
+        dif=10
+        while dif>e:
+            x0=x
+            y0=y
+            z0=z
+            i=0
+            x=(solution[0]-matrix[i][1]*y0-matrix[i][2]*z0)/matrix[i][0]
+            i+=1
+            y=(solution[1]-matrix[i][0]*x0-matrix[i][2]*z0)/matrix[i][1]
+            i+=1
+            z=(solution[2]-matrix[i][0]*x0-matrix[i][1]*y0)/matrix[i][2]
+            print("x: ", x, "y: ", y, "z: ",z)
+            dif=abs(x-x0)
 
 
 
 
-    L,U,D=findLUD(matrix)
-    for i in range(len(matrix)):
-        for j in range(len(matrix)):
-          if D[i][j]!=0:
-              D[i][j]*=1/10
+
 
 
 
@@ -102,7 +82,6 @@ def zaidel(matrix, solution):
         return
     else:
         print("dominant matrix ")
-    findLUD(matrix)
 
 
 
