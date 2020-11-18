@@ -11,7 +11,7 @@ for i in range (rows):
 print("your matrix is " ,matrix)
 solution=[]
 for i in range (rows):
-    num = float(input("enter a number for solution"))
+    num = float(input("enter a number for solution "))
     solution.append(num)
 
 def dominant(matrix):
@@ -33,9 +33,6 @@ def EmptyMatrix(matrix):
         m.append(row)
         row = []
     return m
-
-
-
 
 
 def yahakobi(matrix,solution):
@@ -60,18 +57,8 @@ def yahakobi(matrix,solution):
             y=(solution[1]-matrix[i][0]*x0-matrix[i][2]*z0)/matrix[i][1]
             i+=1
             z=(solution[2]-matrix[i][0]*x0-matrix[i][1]*y0)/matrix[i][2]
-            print("x: ", x, "y: ", y, "z: ",z)
+            print("x: ", x, ",y: ", y, ",z: ",z)
             dif=abs(x-x0)
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -82,8 +69,23 @@ def zaidel(matrix, solution):
         return
     else:
         print("dominant matrix ")
-
-
+        e = 0.001
+        x = 0
+        y = 0
+        z = 0
+        dif = 10
+        while dif > e:
+            x0 = x
+            y0 = y
+            z0 = z
+            i = 0
+            x = (solution[0] - matrix[i][1] * y0 - matrix[i][2] * z0) / matrix[i][0]
+            i += 1
+            y = (solution[1] - matrix[i][0] * x - matrix[i][2] * z0) / matrix[i][1]
+            i += 1
+            z = (solution[2] - matrix[i][0] * x - matrix[i][1] * y) / matrix[i][2]
+            print("x: ", x, ",y: ", y, ",z: ", z)
+            dif = abs(x - x0)
 
 choice=int(input("which one do you want to use: 1 yahakobi, 2 zaidel "))
 if choice==1:
