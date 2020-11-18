@@ -1,7 +1,13 @@
+#ניסיתי לעשות ליותר מ3 על 3 אבל לא הצלחתי כשזה הגיעה לפונקציות
+#ניסיתי לפי LUD גם הסתבכתי
+
+#name:erelle boubli
+#id:324460443
 
 matrix=[]
 row=[]
-rows= int(input("enter number of rows: "))
+rows= 3
+print("enter numbes to fill a 3x3 matrix ")
 for i in range (rows):
     for i in range (rows):
         num=float(input("enter a number "))
@@ -10,6 +16,7 @@ for i in range (rows):
     row = []
 print("your matrix is " ,matrix)
 solution=[]
+print("enter 3 solution numbers ")
 for i in range (rows):
     num = float(input("enter a number for solution "))
     solution.append(num)
@@ -22,17 +29,6 @@ def dominant(matrix):
         if abs(matrix[i][i])<sumNum:
             flag+=1
     return flag
-
-def EmptyMatrix(matrix):
-    m=[]
-    row=[]
-    num = 0
-    for i in range(len(matrix)):
-        for i in range(len(matrix)):
-            row.append(num)
-        m.append(row)
-        row = []
-    return m
 
 
 def yahakobi(matrix,solution):
